@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios de build
+dist/
+build/
+
+# Arquivo de ambiente (credenciais)
+.env
+
+# Arquivos de cache temporário
+.cache/
+tmp/
+
+# Configurações específicas do VS Code
+.vscode/
+
+# Configurações do sistema operacional
+.DS_Store
+Thumbs.db
