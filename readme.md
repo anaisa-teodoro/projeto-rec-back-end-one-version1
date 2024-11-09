@@ -67,15 +67,14 @@ npm install express --save
 node index.js
   ```
 ```git
-[anaisa@anaisa-notebook-aspirea31556  projeto-rec-back-end-one-version1]$ node index.js
-Server do projeto Viagem365 rodando na porta 3000!
+$ Server do projeto Viagem365 rodando na porta 3000!
 ```
 
 ## Organização do Ttabalho:
 
 
-:point_right: [Link do Trello](https://trello.com/invite/b/PXvepNMQ/ATTI70254cc8d317361e30b98ddc44f43c671CB78012/natureza365-floripa-natural-trails)
+:point_right: [Link do Trello](https://trello.com/invite/b/672fae9f231944fed47b4d23/ATTIf8f505115d4477fed570aeceb186ff3200607CB7/viagem365-floripa-nature)
 
 ---
 
-:kissing: Feito com muito carinho e muito aprendizado nas aulas! 
+:kissing: Feito com muito carinho por Anaísa Mayara Teodoro e muito aprendizado nas aulas! 
