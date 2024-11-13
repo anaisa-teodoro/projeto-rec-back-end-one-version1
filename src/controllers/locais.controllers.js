@@ -235,23 +235,5 @@ module.exports = {
     } catch (error) {
       return res.json(error.message);
     }
-  },
-  async indexMaps (req, res) {
-    const id = req.params.local_id;
-    const local = await Locais.findByPk(id, {
-      include: {
-        association: "localidades",
-      },
-    });
-    if (!local) {
-      res.status(404);
-      throw new Error("Local não encontrado");
-    };
-
-    const {latitude, longitude} = local;
-    const localName = await getLocalName(latitude, longitude);
-    console.log(localName);
-
-    return res.send(localName);
   }
 };

@@ -6,11 +6,13 @@ const morgan = require("morgan");
 config();
 //rotas
 const rotas = require('./routes/index');
+const swaggerUi = require('swagger-ui-express');
 
 class Server { 
   constructor(app = express()) {
     app.use(morgan('dev'));
     app.use(cors())
+    app.use("/docs", swaggerUi.serve, swaggerUi.setup(require('./swagger_output.json'))); 
 
    
 

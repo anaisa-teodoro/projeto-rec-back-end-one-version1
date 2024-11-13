@@ -1,11 +1,12 @@
 {
   "name": "projeto-rec-back-end-one-version1",
   "version": "1.0.0",
-  "main": "index.js",
   "description": "Projeto de Recuperação - Módulo III",
+  "main": "index.js",
   "scripts": {
     "start:dev": "nodemon src/server.js",
     "dev": "nodemon src/index.js",
+    "db:create": "sequelize db:create && sequelize db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,7 +37,10 @@
     "morgan": "^1.10.0",
     "pg": "^8.13.1",
     "pg-connection-string": "^2.7.0",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",

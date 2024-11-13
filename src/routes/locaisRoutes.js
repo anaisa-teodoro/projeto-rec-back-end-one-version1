@@ -1,5 +1,5 @@
 const locaisRoutes = require("express").Router();
-const {plataforma, index, indexId,update,status,deleteId,indexMaps, getAllLocals} = require('../controllers/locais.controllers');
+const {plataforma, index, indexId,update,status,deleteId, getAllLocals} = require('../controllers/locais.controllers');
 const { validarToken } = require("../middlewares/auth");
 
 locaisRoutes.get("/api/local",getAllLocals);
