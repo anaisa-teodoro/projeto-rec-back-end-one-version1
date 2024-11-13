@@ -24,6 +24,9 @@ class Server {
     try {
       await connection.authenticate();
       console.log("Conexão com o banco de dados estabelecida com sucesso!");
+      console.log("******************************************************");
+      console.log("Seja bem-vindo(a) a platarforma do Viagem365!");
+      console.log(`Data e Horário do login inicial: ${new Date().toLocaleString()}`);
     } catch (error) {
       console.error("Não foi possível conectar com o banco de dados:", error.message);
     }

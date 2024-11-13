@@ -64,19 +64,16 @@ npm install express --save
 :arrow_forward:A API estará disponível em http://localhost:3000. Para verificar se o server está funcionando, insira o comando:
 
  ```bash 
-node index.js
+npm run dev
   ```
 ```git
-$ Server do projeto Viagem365 rodando na porta 3000!
+Servidor executando em http://localhost:3000/
+Executing (default): SELECT 1+1 AS result
+Conexão com o banco de dados estabelecida com sucesso!
+******************************************************
+Seja bem-vindo(a) a platarforma do Viagem365!
+Data e Horário do login inicial: 13/11/2024, 20:25:47
 ```
-### Configurando o Ambiente .env
-
-- Para facilitar a configuração do ambiente, você pode usar o script `configure-env`, que lê um arquivo `.env.example`. Depois, gera um arquivo .env a partir desses valores.
-
-- Ou criar manualmente um arquivo `.env`.
-  Você pode instalar via CLI por meio nomde outro gerenciador de pacotes.
-  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global. Insiras as informções nesse arquivo as variaveis de ambiente de desenvolvimento como:database, host,usernamed,passworddb,etc;.
-
 
 ### Instal as dev dependências
 
@@ -88,6 +85,15 @@ npm install configure-env --save-dev
 
 1. `npm install`
 2. Se for em ambiente local: `npm install --dev`
+
+### Configurando o Ambiente .env
+
+- Para facilitar a configuração do ambiente, você pode usar o script `configure-env`, que lê um arquivo `.env.example`. Depois, gera um arquivo .env a partir desses valores.
+
+- Ou criar manualmente um arquivo `.env` conforme comando abaixo.
+  Você pode instalar via CLI por meio de outro gerenciador de pacotes.
+  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global. Insiras as informções nesse arquivo as variaveis de ambiente de desenvolvimento como:database, host,usernamed,passwordb,etc;.
+
 3. `cp .env_example .env`
 
 ### Criação do Banco de Dados
