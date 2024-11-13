@@ -69,6 +69,114 @@ node index.js
 ```git
 $ Server do projeto Viagem365 rodando na porta 3000!
 ```
+### Configurando o Ambiente .env
+
+- Para facilitar a configuração do ambiente, você pode usar o script `configure-env`, que lê um arquivo `.env.example`. Depois, gera um arquivo .env a partir desses valores.
+
+- Ou criar manualmente um arquivo `.env`.
+  Você pode instalar via CLI por meio nomde outro gerenciador de pacotes.
+  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global. Insiras as informções nesse arquivo as variaveis de ambiente de desenvolvimento como:database, host,usernamed,passworddb,etc;.
+
+
+### Instal as dev dependências
+
+npm install configure-env --save-dev
+
+### Rodar o repositório:
+
+### Na primeira vez é necessário instalar as dependências:
+
+1. `npm install`
+2. Se for em ambiente local: `npm install --dev`
+3. `cp .env_example .env`
+
+### Criação do Banco de Dados
+4. `npm run db:create`
+
+### Para rodar o repositório em ambiente local
+
+5. `npm run start:dev`
+
+### Trabalhando com migrations:
+
+### Criar uma migration
+
+6. `sequelize migration:generate --name `
+7. `npx sequelize-cli migration:generate --name `
+
+### Rodar uma migration. Opções:
+
+8. Opção nº 1: `sequelize db:migrate`
+9. Opção nº 2: `npx sequelize db:migrate`
+
+### Reverter a última migration:
+
+10. `sequelize-cli db:migrate:undo`
+11. `npx sequelize-cli db:migrate:undo`
+
+### Trabalhando com Seeders
+
+### Criar valores iniciais no banco de dados:
+
+12. `sequelize db:seed:all`
+13. `npx sequelize db:seed:all`
+
+### Criação de seedrs
+
+Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam um padrão de preenchimento das tabelas. Eles podem ser usadas para preencher as tabelas do banco de dados com dados de amostra ou de teste:
+
+ `npx sequelize seed:generate --name test `
+
+ Atualizar os seeders
+`npx sequelize-cli db:seed:undo:all`
+ 
+ 
+### Endpoints de Usuário
+
+#### Endpoints Públicos
+
+| Endereço              | Verbo | Descrição             |
+| --------------------- | ----- | --------------------- |
+| `/api/usuario`        | POST  | Criar um novo usuário |
+| `/api/usuarios/login` | POST  | Login do usuário      |
+
+
+- Criar um novo usuário
+```
+     
+    "nome_completo" : "Eterna Js",
+    "sexo": "Feminino",
+    "cpf" : "12245495874",
+    "email" : "aprendiz@dev.com",
+    "senha" : "DevFuturo@24",
+    "endereco" : "Rua porta 3000",     
+    "data_nascimento" : "2023-12-20",
+     
+
+```
+
+#### Endpoints Protegidos por Validação de Token
+
+| Endereço                   | Verbo | Descrição                               |
+| -------------------------- | ----- | --------------------------------------- |
+| `/api/usuarios/:id`        | PUT   | Atualizar informações do usuário por ID |
+| `/api/usuarios/:id/status` | PUT   | Atualizar status do usuário por ID      |
+| `/api/usuarios/:id/senha`  | PUT   | Atualizar senha do usuário por ID       |
+| `/api/usuarios/:id`        | GET   | Obter informações do usuário por ID     |
+
+### Endpoints Local
+
+### Endpoints Protegidos por Token
+
+| Endereço                    | Verbo  | Descrição                   |
+| --------------------------- | ------ | --------------------------- |
+| `/api/local`                | POST   | Adicionar local             |
+| `/api/local`                | GET    | Obter todos os locais       |
+| `/api/local/:local_id`      | GET    | Obter local por ID          |
+| `/api/local/:local_id`      | PUT    | Atualizar local por ID      |
+| `/api/local/:id/status`     | PUT    | Atualizar status do local   |
+| `/api/local/:local_id`      | DELETE | Excluir local por ID        |
+| `/api/local/:local_id/maps` | GET    | Obter mapas do local por ID |
 
 ## Organização do Ttabalho:
 
