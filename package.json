@@ -9,10 +9,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/anaisa-teodoro/projeto-rec-back-end-one-version1"
-    },
-    "engines":{
-      "node": "22.8.0"
-    },
+  },
+  "engines": {
+    "node": "22.8.0"
+  },
   "keywords": [
     "Projeto Viagem365",
     "FuturoDev",
@@ -26,6 +26,9 @@
   "author": "Anaísa Mayara Teodoro",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0"
   }
 }
