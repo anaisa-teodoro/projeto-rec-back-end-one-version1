@@ -67,7 +67,7 @@ const Locais = connection.define(
 );
 
 Localidades.belongsToMany(Locais, { through: LocalidadeLocal });
-Locais.belongsToMany(Localidades, { through: LocalidadeLocal});
+Locais.belongsToMany(Localidades, { through: LocalidadeLocal });
 
 Localidades.hasMany(LocalidadeLocal);
 Locais.hasMany(LocalidadeLocal);
@@ -77,5 +77,4 @@ LocalidadeLocal.belongsTo(Locais);
 
 Locais.belongsTo(Usuarios);
 
-
-module.exports =Locais;
+module.exports = Locais;
