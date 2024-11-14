@@ -50,16 +50,46 @@ O objetivo desse projeto tem como intuito desenvolver um MVP (Minimum Viable Pro
  ```bash 
  node -v >.nvmrc
   ```   
-3. Instale as dependências:
+
+
+### Configurando o Ambiente .env
+
+- Para facilitar a configuração do ambiente, você pode usar o script `configure-env`, que lê um arquivo `.env.example`. Depois, gera um arquivo .env a partir desses valores.
+
+- Ou criar manualmente um arquivo `.env` conforme comando abaixo.
+  Você pode instalar via CLI por meio de outro gerenciador de pacotes.
+  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global. Insiras as informções nesse arquivo as variaveis de ambiente de desenvolvimento como:database, host,usernamed,passwordb,etc;.
+
+3. Comando para copiar o ambiente de desenvolvimento:
+
+```bash 
+cp .env_example .env
+  ```
+
+
+### Na primeira vez é necessário instalar as dependências:
+4. Instale as dependências:
  ```bash 
  npm install
   ```
-4. Instale as developer dependências:
+### Instale as dev dependências
+4.1. Instale as developer dependências:
+
+ ```bash 
+npm install configure-env --save-dev
+  ```
+ou 
  ```bash 
 npm install express --save
   ```
+### Criação do Banco de Dados
 
-5. Rode o servidor:
+5. Criar o banco de dados
+
+`npm run db:create`
+
+### Rodar o repositório:
+6. Rode o servidor:
 
 :arrow_forward:A API estará disponível em http://localhost:3000. Para verificar se o server está funcionando, insira o comando:
 
@@ -75,61 +105,33 @@ Seja bem-vindo(a) a platarforma do Viagem365!
 Data e Horário do login inicial: 13/11/2024, 20:25:47
 ```
 
-### Instal as dev dependências
-
-npm install configure-env --save-dev
-
-### Rodar o repositório:
-
-### Na primeira vez é necessário instalar as dependências:
-
-1. `npm install`
-2. Se for em ambiente local: `npm install --dev`
-
-### Configurando o Ambiente .env
-
-- Para facilitar a configuração do ambiente, você pode usar o script `configure-env`, que lê um arquivo `.env.example`. Depois, gera um arquivo .env a partir desses valores.
-
-- Ou criar manualmente um arquivo `.env` conforme comando abaixo.
-  Você pode instalar via CLI por meio de outro gerenciador de pacotes.
-  O ideal é instalá-lo como uma dependência de desenvolvimento em vez de global. Insiras as informções nesse arquivo as variaveis de ambiente de desenvolvimento como:database, host,usernamed,passwordb,etc;.
-
-3. `cp .env_example .env`
-
-### Criação do Banco de Dados
-4. `npm run db:create`
-
-### Para rodar o repositório em ambiente local
-
-5. `npm run start:dev`
-
 ### Trabalhando com migrations:
 
 ### Criar uma migration
 
-6. `sequelize migration:generate --name `
-7. `npx sequelize-cli migration:generate --name `
+7. `sequelize migration:generate --name `
+8. `npx sequelize-cli migration:generate --name `
 
 ### Rodar uma migration. Opções:
 
-8. Opção nº 1: `sequelize db:migrate`
-9. Opção nº 2: `npx sequelize db:migrate`
+9. Opção nº 1: `sequelize db:migrate`
+10. Opção nº 2: `npx sequelize db:migrate`
 
 ### Reverter a última migration:
 
-10. `sequelize-cli db:migrate:undo`
-11. `npx sequelize-cli db:migrate:undo`
+11. `sequelize-cli db:migrate:undo`
+12. `npx sequelize-cli db:migrate:undo`
 
 ### Trabalhando com Seeders
 
 ### Criar valores iniciais no banco de dados:
 
-12. `sequelize db:seed:all`
-13. `npx sequelize db:seed:all`
+13. `sequelize db:seed:all`
+14. `npx sequelize db:seed:all`
 
 ### Criação de seedrs
 
-Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam um padrão de preenchimento das tabelas. Eles podem ser usadas para preencher as tabelas do banco de dados com dados de amostra ou de teste:
+15. Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam um padrão de preenchimento das tabelas. Eles podem ser usadas para preencher as tabelas do banco de dados com dados de amostra ou de teste:
 
  `npx sequelize seed:generate --name test `
 
@@ -158,7 +160,6 @@ Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam
     "endereco" : "Rua porta 3000",     
     "data_nascimento" : "2023-12-20",
      
-
 ```
 
 #### Endpoints Protegidos por Validação de Token
@@ -184,7 +185,18 @@ Para gerenciar todas as migrações de dados, você pode usar(seeders que deixam
 | `/api/local/:local_id`      | DELETE | Excluir local por ID        |
 | `/api/local/:local_id/maps` | GET    | Obter mapas do local por ID |
 
-## Organização do Ttabalho:
+### Endpoints Protegidos com Token
+
+| Endereço               | Verbo  | Descrição                   |
+| ---------------------- | ------ | --------------------------- |
+| `/api/localidades`     | POST   | Adicionar localidade        |
+| `/api/localidades/:id` | PUT    | Atualizar localidade por ID |
+| `/api/localidades/`    | GET    | Obter todas as localidades  |
+| `/api/localidades/:id` | GET    | Obter localidade por ID     |
+| `/api/localidades/:id` | DELETE | Excluir localidade por ID   |
+
+
+## Organização do Trabalho:
 
 
 :point_right: [Link do Trello](https://trello.com/invite/b/672fae9f231944fed47b4d23/ATTIf8f505115d4477fed570aeceb186ff3200607CB7/viagem365-floripa-nature)
